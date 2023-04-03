@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import {Route, Routes} from "react-router-dom";
 import Navbar from "./components/NavBar";
+import Checkout from "./Checkout";
 import {defaultInventory, defaultDiscounts} from "./Data";
 import Inventory from "./Inventory/Inventory";
 
@@ -28,6 +29,16 @@ function App() {
 				}
 			/>
 			)}
+			<Route
+				path="/"
+				element={
+					<Checkout 
+					stockKeepingUnits={stockKeepingUnits}
+					findUnitByName={findUnitByName}
+					discounts={discounts}
+					/>
+				} 
+			/>
 		</Routes>
     </div>
   );
